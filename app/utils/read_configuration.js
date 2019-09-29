@@ -10,7 +10,8 @@ exports.getConfiguration = (path) => {
   const result = {
     host: '0.0.0.0',
     port: 4040,
-    security: false
+    security: false,
+    propertiesPath: 'config'
   };
   if (existsSync(path)) {
     const text = readFileSync(path, 'utf-8');
