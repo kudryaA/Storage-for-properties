@@ -1,6 +1,7 @@
 const { authorization } = require('./../models/authorization');
 const { CronJob } = require('cron');
 const { SetQueue } = require('./../models/set_queue');
+const { getProperties } = require('./../models/get_properties');
 
 /**
  * Create crontroller
@@ -30,8 +31,35 @@ exports.createController = (server, logger, configuration) => {
       });
     }
   });
+  server.route({
+    method: 'POST',
+    path: '/get',
+    handler: (request, h) => {
+      logger.info(`Request to /get`);
+      return authorization(configuration, logger).then(() => {
+        const key = request.payload.key;
+        const property = getProperties(configuration, key);
+        if (property) {
+          return {
+            status: true,
+            value: property
+          };
+        } else {
+          return {
+            status: false,
+            comment: `Not found property ${key}`
+          };
+        }
+      }, () => {
+        return {
+          status: false,
+          comment: 'Autorization error'
+        };
+      });
+    }
+  });
   new CronJob('* * * * * *', () => {
     setQueue.resolve();
-    logger.info('Queue of setting properties is resolved!');
+    //logger.info('Queue of setting properties is resolved!');
   }, null, true, 'America/Los_Angeles');
 };
