@@ -29,3 +29,20 @@ It is service for storage all properties. Service give access to properties with
   "status": true,
 }
 ```
+# Instalation notes
+1. Clone repositories
+```
+git clone https://github.com/kudryaA/Storage-for-propertie
+```
+2. Open folder
+```
+cd Storage-for-properties
+```
+3. Install dependencies
+```
+npm install
+```
+4. Run server
+```
+npm start
+```
