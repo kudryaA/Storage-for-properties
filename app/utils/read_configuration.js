@@ -4,7 +4,7 @@ const { existsSync, readFileSync } = require('fs');
 
 /**
  * Metod for get configuration
- * @param path path to yaml file with configuration
+ * @param {string} path path to yaml file with configuration
  */
 exports.getConfiguration = (path) => {
   const result = {
