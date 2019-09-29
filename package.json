@@ -18,6 +18,7 @@
   "homepage": "https://github.com/kudryaA/Storage-for-properties#readme",
   "dependencies": {
     "@hapi/hapi": "^18.4.0",
-    "bunyan": "^1.8.12"
+    "bunyan": "^1.8.12",
+    "yaml": "^1.7.0"
   }
 }
