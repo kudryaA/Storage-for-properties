@@ -1,8 +1,8 @@
 /**
  * Method for create autorization action
- * @param configuration configuration with security info
+ * @param {object} configuration configuration with security info
  * @param logger
- * @param password password for authorization
+ * @param {string} password password for authorization
  */
 exports.authorization = (configuration, logger, password = undefined) => {
   return new Promise((resolve, reject) => {
