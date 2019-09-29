@@ -1,5 +1,8 @@
 const bunyan = require('bunyan');
 
+/**
+ * Method for crate logger
+ */
 exports.createLogger = () => {
   return bunyan.createLogger({
     src: true,

@@ -1,6 +1,11 @@
 const { parse } = require('yaml');
 const { existsSync, readFileSync } = require('fs');
 
+
+/**
+ * Metod for get configuration
+ * @param path path to yaml file with configuration
+ */
 exports.getConfiguration = (path) => {
   const result = {
     host: '0.0.0.0',

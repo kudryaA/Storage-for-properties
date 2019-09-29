@@ -1,5 +1,10 @@
 const Hapi = require('@hapi/hapi');
 
+
+/**
+ * Method for create hapi.js server
+ * @param configuration configuration of service
+ */
 exports.createServer = (configuration) => {
     const host = configuration.host;
     const port = configuration.port;
